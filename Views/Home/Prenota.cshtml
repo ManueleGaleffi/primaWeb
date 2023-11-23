@@ -1,0 +1,24 @@
+﻿@model Prenotazione
+@{
+    ViewData["Title"] = "Prenota";
+}
+
+<div class="text-center">
+    <h1 class="display-4">@ViewData["Title"]</h1>
+    <form class="m-2" method="post" asp-action="Prenota">
+        <div class="form-group">
+            <label for="Nome">Inserisci il tuo nome:</label>    
+            <input type="text" name="Nome" required>
+        </div>
+        <div class="form-group">
+            <label for="Email">Inserisci la tua email:</label>    
+            <input type="text" name="Email" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Prenota</button>
+    </form>
+    @{
+        if(Model != null) {
+            <p>Prenotazione effetuata da @Model.Nome email: @Model.Email</p>
+        }   
+    }
+</div>
